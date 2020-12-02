@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+body
+	{
+		font-family:arial;
+		background-image:linear-gradient(to right,#e89135,#ff5050);
+	}
+
+h3
+{
+	color:#000000;
+	font-size:40px;
+	background-image:linear-gradient(to right,#e89135,#ff5050);
+	padding:5px;
+	border:3px solid black;
+	border-radius:10px;
+	width:60%;
+}
+h3 span
+{
+	font-size:20px;
+	font-weight:200;
+}
+h3 i
+{
+	color:white;
+}
+::placeholder
+{
+	font-size:20px;
+	color:black;
+}
+.alltem
+{
+	background-image:url('dog.png');
+	background-repeat:no-repeat;
+	padding-bottom:100px;
+	padding-left:80px;
+	margin:25px;
+}
+@media screen and (max-width:900px)
+{
+	.alltem
+{
+	padding-left:50px;
+}
+h3
+{
+	width:90%;
+}
+}
+.farcel
+{
+	color:black;
+	padding-right:10px;
+	font-size:30px;
+	font-weight: bold;
+
+}
+#con
+{
+	border:none;
+    background-color:black;
+	color:white;
+	font-size:18px;
+	height: 50px;
+	width:30%;
+	margin-top:25px;
+	border-radius:5px;
+	cursor:pointer;
+	outline:none;
+	transition:0.8s;
+}
+#con:hover
+{
+	background-color: white;
+	color:black;
+}
+#far
+	{
+		height:30px;
+		font-size:20px;
+		width:40px;
+		text-align:center;
+		border:none;
+		background-color:inherit;
+		border:2px solid white;
+		color:white;
+		outline: none;
+		margin-top:10px;
+	}
+#cel
+	{
+		height:30px;
+		font-size:20px;
+		width:30%;
+		text-align:center;
+		border:none;
+		background-color:inherit;
+		border:2px solid white;
+		color:white;
+		outline: none;
+	}
+#nam
+	{
+		height:30px;
+		font-size:20px;
+		width:50%;
+		text-align:center;
+		border:none;
+		background-color:inherit;
+		border-bottom:2px solid white;
+		color:white;
+		outline: none;
+		text-transform:capitalize;
+	}
+#mes
+	{
+		font-size:20px;
+		width:50%;
+		font-weight: bold;
+		font-style:italic;
+		border:none;
+		background-color:inherit;
+		color:white;	
+	}
+.farcel i
+	{
+		font-size:25px;
+	}
+
+</style>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+<body align="center">
+
+<div class="alltem" align="center">
+<h3>Human <i class="fas fa-exchange-alt"></i> Dog <br><span class="sub">Complete this form and get a dare</span></h3>
+<div class="inputboxes">
+	<span class="farcel"><i class="fas fa-file-signature"></i></span>
+	<input type="varchar" id="nam" placeholder="Your Name" onfocus="this.placeholder=''" onblur="this.placeholder='Name here'" onclick="nclr()">
+</div><br>
+<div class="inputboxes"><span class="farcel">Your age <i class="fas fa-user-circle"></i></span><br>
+	<input type="varchar" id="far" placeholder="age" onfocus="this.placeholder=''" onblur="this.placeholder='age'" onclick="clr()">
+</div><br>
+<div class="inputboxes"><span class="farcel">Dog age <i class="fas fa-paw"></i></span></div><br>
+	<div id="cel"></div><br>
+	<div id="mes"></div><br>
+
+<button id="con" onclick="con()">Convert</button>
+</div>
+
+<script type="text/javascript">
+
+document.getElementById("con").style.display="none";
+function con()
+{
+	var far=document.getElementById("far").value;
+	var cel=document.getElementById("cel").innerHTML;
+	var name=document.getElementById("nam").value;
+	var message=document.getElementById('mes').innerHTML;
+	var x,y,p,q;
+if (document.getElementById('far').value.length=="" || document.getElementById('nam').value.length=="") 
+{
+	alert('First fill your Name and Age');
+	document.getElementById("cel").innerHTML="";
+	document.getElementById("mes").innerHTML="";
+
+}
+		else if(far<="18")
+	{
+		document.getElementById('cel').innerHTML = "Born";
+		alert('Happy Birth Day Mr.Puppy! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Get some coffee for your friend."';
+	}
+		else if(far>="19" && far<="20")
+	{
+		document.getElementById('cel').innerHTML = "2 years";
+		alert('You are still a Puppy! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Start Clapping and say "hip hip hurrey""';
+	}
+		else if(far=="21")
+	{
+		document.getElementById('cel').innerHTML = "3 years";
+		alert('Your Dog Life Started ! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Take a deep breath and walk like zombie"';
+	}
+		else if(far == "22")
+	{
+		document.getElementById('cel').innerHTML = "4 years";
+		alert('Get married soon Mr. Dog! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Tell three secrets to your friend at right or left"';
+	}
+		else if(far>"22" && far<="24")
+	{
+		document.getElementById('cel').innerHTML = "5 years";
+		alert('Be a brave Dog! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Just turn around and sing a song"';
+	}
+
+		else if(far>="25" && far<="30")
+	{
+		document.getElementById('cel').innerHTML = "6 years";
+		alert('Be a brave Dog and never fight with your friends! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Take out all the money from your pocket"';
+	}
+		else if(far>="31" && far<="40")
+	{
+		document.getElementById('cel').innerHTML = "7 years";
+		alert('Hang out with your doggie colleagues ! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Start dancing with no song."';
+	}
+		else if(far>="41" && far<="44")
+	{
+		document.getElementById('cel').innerHTML = "7.5 years";
+		alert('Moment for an adventure Mr.Dog! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Go to a person who hate most and say "Happy Friendship Day""';
+	}
+		else if(far=="45")
+	{
+		document.getElementById('cel').innerHTML = "8 years";
+		alert('Great time for outing Mr.Dog! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Give a dare to a girl/boy near by."';
+	}		
+		else if(far>="46" && far<="50")
+	{
+		document.getElementById('cel').innerHTML = "9 years";
+		alert('Getting so much excited Mr.Dog! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Draw funny image of your friend on a paper"';
+	}
+		else if(far>="51" && far<="60")
+	{
+		document.getElementById('cel').innerHTML = "10 years";
+		alert('Stop Struggling and just relax now Mr.Dog! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Take some water and throw on road"';
+	}
+		else if(far>"60" )
+	{
+		document.getElementById('cel').innerHTML = "12 years";
+		alert('Do exercise everyday and remain fit Mr.Dog! '  + name.toUpperCase() );
+		document.getElementById('mes').innerHTML='"Just sing a good song for your best friend"';
+	}
+
+}
+function clr()
+{
+		document.getElementById("far").value="";
+		document.getElementById("cel").value="";
+}
+function nclr()
+{
+		document.getElementById("nam").value="";
+		document.getElementById("far").value="";
+		document.getElementById("cel").innerHTML="";
+		document.getElementById("mes").innerHTML="";
+		document.getElementById("con").style.display="block";
+
+}
+</script>
+</body>
+</html>
